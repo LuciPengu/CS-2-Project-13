@@ -27,13 +27,14 @@ while(choice != 'x'){
 	case '1':  //Enter the name and read a CSV file
 
 		cout << "Enter the CSV file you would like to read: ";
+
 		cin >> fName;
 		infile.open(fName);
 		if(!infile){
 			cout << endl << "Error: could not open file" << endl << endl;
 			break;
 		}
-		cout << endl << "reading..." << endl << endl;
+		cout << endl << "reading..." << endl;
 
 		while (!infile.eof()) {
 			getline(infile, inputRecord);
@@ -57,8 +58,9 @@ while(choice != 'x'){
 			AAPVector.push_back(tmpAAptr); // Dynamic allocation
 		  }
 		  infile.close();
+		  cout << "Success!" << endl << endl;
 
-		 /*
+		  /*
 		for(int n = 0;n<6;n++){
 			tmpAAptr = new ArcticAnimal;
 			tmpAAptr->setSpeciesName("Debug");
@@ -69,13 +71,13 @@ while(choice != 'x'){
 			tmpAAptr->setFoodSource("Debug");
 			AAPVector.push_back(tmpAAptr); // Dynamic allocation
 		}
-
-		 */
+		   */
 		break;
 
 	case '2':  //Clear the Vector and all Animals from memory
-		cout << "clearing vector..." << endl << endl;
+		cout << "clearing vector..." << endl;
 		clear(AAPVector);
+		cout << "Success!" << endl << endl;
 		break;
 
 	case '3':  //Print out the vector of animals
